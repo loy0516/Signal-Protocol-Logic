@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Protocol V6 - Origin Logic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #ffffff; color: #0f1419; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .x-border { border-color: #eff3f4; }
+        .fade-in { animation: fadeIn 0.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: translateY(0); } }
+        .send-btn:active { transform: scale(0.96); }
+
+        /* Dynamic Theme Classes */
+        .theme-premium .accent-bg { background-color: #000; color: white; }
+        .theme-premium .bg-tone { background-color: #ffffff; }
+        .theme-premium .input-bg { background-color: #f7f9f9; }
+
+        .theme-free .accent-bg { background-color: #f97316; color: white; }
+        .theme-free .bg-tone { background-color: #fffbf7; }
+        .theme-free .input-bg { background-color: #fff7ed; }
+    </style>
+</head>
+<body class="flex justify-center min-h-screen bg-gray-50">
+
+    <div class="w-full max-w-[600px] bg-white border-x x-border relative min-h-screen shadow-sm flex flex-col">
+
+        <div id="page-1" class="fade-in flex-1">
+            <div class="sticky top-0 bg-white/95 backdrop-blur-md border-b x-border p-4 z-10 flex justify-between items-center">
+                <span class="font-black text-xl italic tracking-tighter">SIGNAL-X</span>
+                <div class="text-[10px] font-mono text-gray-400">V6.0 ORIGIN</div>
+            </div>
+
+            <div class="p-5 x-hover border-b x-border cursor-pointer" onclick="switchPage('page-2')">
+                <div class="flex items-start">
+                    <div class="w-12 h-12 rounded-2xl bg-black flex items-center justify-center font-bold text-white shadow-xl">V</div>
+                    <div class="ml-4 flex-1">
+                        <div class="flex items-center"><span class="font-bold">Victor Chen</span><span class="text-gray-400 text-sm ml-2">@vector_c · 2h</span></div>
+                        <p class="mt-2 text-lg font-medium leading-snug">When all data is stored forever, "forgetting" becomes the most expensive luxury.</p>
+                        <div class="mt-3 flex items-center text-xs text-gray-400 font-bold uppercase tracking-widest">
+                            <span>🔥 12.5k Signals</span>
+                            <span class="ml-4">$0.10 / Post</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-2" class="hidden fade-in flex-1 flex flex-col">
+            <div class="sticky top-0 bg-white/95 backdrop-blur-md p-4 flex items-center justify-between z-10 border-b x-border">
+                <div class="flex items-center">
+                    <button onclick="switchPage('page-1')" class="mr-4 text-xl">←</button>
+                    <span class="font-bold text-sm uppercase tracking-widest text-blue-600">● Immutable Archive</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center font-bold text-[10px]">ME</div>
+            </div>
+
+            <div class="p-6 border-b x-border">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-black flex items-center justify-center font-bold text-white">V</div>
+                    <div class="ml-3"><div class="font-bold">Victor Chen</div><div class="text-xs text-gray-500">@vector_c</div></div>
+                </div>
+                <p class="text-xl font-bold leading-tight">When all data is stored forever, "forgetting" becomes the most expensive luxury. We are building a civilization with memory but no eraser.</p>
+            </div>
+
+            <div class="flex-1 p-4 space-y-6 overflow-y-auto">
+
+                <div class="flex items-start">
+                    <div class="w-10 h-10 rounded-xl bg-gray-900 flex-shrink-0 flex items-center justify-center text-white font-bold">A</div>
+                    <div class="ml-3 flex-1">
+                        <div class="flex justify-between"><span class="font-bold text-sm">Alice Moore</span><span class="text-[9px] text-blue-500 font-bold uppercase tracking-tighter">Verified</span></div>
+                        <p class="text-sm text-gray-700 mt-1">This is why Signal Protocol introduced the "Volatile Zone" for physical erasure.</p>
+
+                        <div class="flex items-center mt-3 text-gray-400 text-xs space-x-6">
+                            <span>❤️ 342</span>
+                            <button onclick="openReplyView('premium', 'Alice Moore', 'This is why Signal Protocol introduced the Volatile Zone...', 'A', '#111')" class="flex items-center space-x-1 text-blue-500 font-bold hover:underline">
+                                <span>12 Replies ></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-start relative p-3 bg-orange-50/60 rounded-xl border border-orange-100">
+                    <div class="absolute -top-2 left-2 bg-white px-2 text-[9px] font-bold text-orange-600 border border-orange-200 rounded-full shadow-sm">⚡ TOP SIGNAL · VOLATILE ZONE</div>
+                    <div class="w-10 h-10 rounded-xl bg-orange-500 flex-shrink-0 flex items-center justify-center text-white font-bold">?</div>
+                    <div class="ml-3 flex-1">
+                        <div class="flex justify-between"><span class="font-bold text-sm">Anon_Visitor_99</span><span class="text-[9px] text-orange-400 font-bold">2d Left</span></div>
+                        <p class="text-sm text-gray-800 mt-1 font-medium">"If forgetting is a luxury, the poor will carry the heaviest burden of history."</p>
+
+                        <div class="flex items-center mt-3 text-orange-400 text-xs space-x-6">
+                            <span>🔥 3.2k</span>
+                            <button onclick="openReplyView('free', 'Anon_Visitor_99', 'If forgetting is a luxury...', '?', '#f97316')" class="flex items-center space-x-1 font-bold hover:underline">
+                                <span>85 Replies (Uses Quota) ></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 border-t x-border bg-white pb-6">
+                <div class="flex space-x-3">
+                    <button class="flex-1 bg-black text-white h-12 rounded-xl font-bold text-sm shadow-lg uppercase tracking-widest">Reply ($0.10)</button>
+                    <button onclick="switchPage('page-3')" class="w-12 h-12 border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center text-gray-400 hover:text-orange-500 hover:border-orange-300 bg-orange-50/20">
+                        <span class="text-xl">↹</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-3" class="hidden fade-in flex-1 flex flex-col bg-[#fffbf7]">
+            <div class="sticky top-0 bg-[#fffbf7]/95 backdrop-blur-md p-4 flex items-center justify-between z-10 border-b border-orange-100">
+                <div class="flex items-center">
+                    <button onclick="switchPage('page-2')" class="mr-4 text-gray-400">↹ Archive</button>
+                    <span class="font-bold text-sm uppercase tracking-widest text-orange-500">○ Volatile Zone</span>
+                </div>
+                <div class="text-[10px] bg-orange-100 text-orange-600 px-2 py-1 rounded font-bold uppercase tracking-tighter">Quota: <span id="quota-disp-page3">3</span></div>
+            </div>
+
+            <div class="flex-1 p-4 space-y-6 overflow-y-auto">
+                <div class="text-center text-[10px] text-gray-400 uppercase tracking-[0.3em] py-2 font-bold italic">Auto-Purge in 7 Days</div>
+
+                <div class="flex items-start">
+                    <div class="w-10 h-10 rounded-xl bg-orange-200 flex-shrink-0 flex items-center justify-center text-orange-700 font-bold">G</div>
+                    <div class="ml-3 flex-1">
+                        <div class="flex justify-between"><span class="font-bold text-sm text-gray-600">Guest_A</span><span class="text-[9px] text-gray-300 uppercase font-bold">6d Left</span></div>
+                        <p class="text-sm text-gray-600 mt-1">Does everything really disappear? Testing Signal protocol.</p>
+                        <div class="flex items-center mt-3 text-gray-400 text-xs space-x-6">
+                            <span>❤️ 5</span>
+                            <button onclick="openReplyView('free', 'Guest_A', 'Does everything really disappear?', 'G', '#fed7aa')" class="flex items-center space-x-1 text-orange-500 font-bold hover:underline">
+                                <span>2 Replies ></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="p-4 border-t border-orange-100 bg-[#fffbf7] pb-6">
+                 <button class="w-full bg-orange-500 text-white h-12 rounded-xl font-bold text-sm shadow-lg uppercase tracking-widest">Fire Signal (Uses Quota)</button>
+             </div>
+        </div>
+
+        <div id="page-reply-view" class="hidden fade-in flex-1 flex flex-col absolute inset-0 z-30">
+            <div id="reply-header-bg" class="sticky top-0 backdrop-blur-md p-4 flex items-center justify-between z-10 border-b x-border bg-white/95">
+                <div class="flex items-center">
+                    <button onclick="closeReplyView()" class="mr-4 text-xl text-gray-500">←</button>
+                    <span id="reply-title" class="font-bold text-sm uppercase tracking-widest text-gray-500">Detail</span>
+                </div>
+                <div id="reply-quota-badge" class="hidden text-[10px] bg-orange-100 text-orange-600 px-2 py-1 rounded font-bold uppercase">
+                    Quota: <span id="quota-disp-reply">3</span>
+                </div>
+            </div>
+
+            <div class="p-6 border-b x-border bg-tone" id="reply-parent-wrapper">
+                <div class="flex items-center mb-4">
+                    <div id="rp-avatar" class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white text-sm"></div>
+                    <div class="ml-3">
+                        <div id="rp-name" class="font-bold text-sm"></div>
+                        <div id="rp-meta" class="text-[10px] text-gray-400 uppercase tracking-widest font-bold"></div>
+                    </div>
+                </div>
+                <p id="rp-text" class="text-lg font-medium leading-snug"></p>
+            </div>
+
+            <div class="flex-1 p-4 space-y-6 overflow-y-auto bg-tone" id="reply-list-wrapper">
+                <div class="text-[10px] font-bold text-gray-400 mb-2 uppercase tracking-[0.2em]">Discussion Thread</div>
+                <div id="mock-replies"></div>
+            </div>
+
+            <div class="p-4 border-t x-border pb-8 bg-white">
+                <textarea id="reply-input" class="w-full rounded-xl p-3 text-sm border-none focus:ring-1 mb-3 resize-none input-bg" rows="1" placeholder=""></textarea>
+                <button id="reply-action-btn" onclick="submitReply()" class="w-full h-12 rounded-xl font-bold text-white shadow-lg flex items-center justify-center accent-bg transition-transform active:scale-95 uppercase tracking-widest text-xs">
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let quota = 3;
+        let currentMode = 'premium';
+
+        function switchPage(pageId) {
+            ['page-1', 'page-2', 'page-3'].forEach(id => document.getElementById(id).classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function openReplyView(mode, name, text, avatarChar, avatarColor) {
+            currentMode = mode;
+            const container = document.getElementById('page-reply-view');
+
+            container.className = `hidden fade-in flex-1 flex flex-col absolute inset-0 z-30 ${mode === 'premium' ? 'theme-premium' : 'theme-free'}`;
+
+            document.getElementById('reply-title').innerText = mode === 'premium' ? "● Immutable" : "○ Volatile";
+            document.getElementById('reply-title').className = mode === 'premium' ? "font-bold text-sm uppercase tracking-widest text-blue-600" : "font-bold text-sm uppercase tracking-widest text-orange-500";
+
+            if(mode === 'free') {
+                document.getElementById('reply-quota-badge').classList.remove('hidden');
+                document.getElementById('quota-disp-reply').innerText = quota;
+            } else {
+                document.getElementById('reply-quota-badge').classList.add('hidden');
+            }
+
+            document.getElementById('rp-name').innerText = name;
+            document.getElementById('rp-text').innerText = text;
+            document.getElementById('rp-meta').innerText = mode === 'premium' ? "Status: Permanent" : "Status: 7-Day Life";
+            const avDiv = document.getElementById('rp-avatar');
+            avDiv.innerText = avatarChar;
+            avDiv.style.backgroundColor = avatarColor;
+
+            generateMockReplies(mode);
+
+            const btn = document.getElementById('reply-action-btn');
+            const input = document.getElementById('reply-input');
+            if (mode === 'premium') {
+                btn.innerHTML = "Confirm Archive ($0.05)";
+                input.placeholder = "Enter immutable perspective...";
+            } else {
+                btn.innerHTML = `Fire Signal (Quota: ${quota})`;
+                input.placeholder = "Enter volatile opinion...";
+            }
+
+            container.classList.remove('hidden');
+        }
+
+        function closeReplyView() {
+            document.getElementById('page-reply-view').classList.add('hidden');
+        }
+
+        function generateMockReplies(mode) {
+            const container = document.getElementById('mock-replies');
+            container.innerHTML = '';
+
+            const data = mode === 'premium' ? [
+                {name: 'Bob', text: 'Agreed. Data entropy must be controlled.', time: 'Archived', bg: '#e5e7eb', col: '#374151'},
+                {name: 'Charlie', text: 'Proof of Stake for social signal.', time: 'Archived', bg: '#e5e7eb', col: '#374151'}
+            ] : [
+                {name: 'User_X', text: 'Supporting this Top Signal.', time: '6d Left', bg: '#ffedd5', col: '#c2410c'},
+                {name: 'User_Y', text: 'Truth is volatile here.', time: '5d Left', bg: '#ffedd5', col: '#c2410c'}
+            ];
+
+            data.forEach(item => {
+                const div = document.createElement('div');
+                div.className = "flex items-start border-b border-gray-100 pb-4 mb-4";
+                div.innerHTML = `
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold uppercase" style="background-color:${item.bg}; color:${item.col}">${item.name[0]}</div>
+                    <div class="ml-3 flex-1">
+                        <div class="flex justify-between"><span class="font-bold text-xs text-gray-600">${item.name}</span><span class="text-[9px] text-gray-300 font-bold uppercase">${item.time}</span></div>
+                        <p class="text-sm text-gray-700 mt-1">${item.text}</p>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function submitReply() {
+            const input = document.getElementById('reply-input');
+            if(!input.value) return;
+
+            if (currentMode === 'premium') {
+                alert("$0.05 processed. Entry is now immutable.");
+                input.value = "";
+            } else {
+                if(quota > 0) {
+                    quota--;
+                    document.getElementById('quota-disp-page3').innerText = quota;
+                    document.getElementById('quota-disp-reply').innerText = quota;
+                    document.getElementById('reply-action-btn').innerHTML = `Fire Signal (Quota: ${quota})`;
+
+                    const container = document.getElementById('mock-replies');
+                    const div = document.createElement('div');
+                    div.className = "flex items-start border-b border-gray-100 pb-4 mb-4 fade-in";
+                    div.innerHTML = `
+                        <div class="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center text-xs font-bold text-white uppercase">ME</div>
+                        <div class="ml-3 flex-1">
+                            <div class="flex justify-between"><span class="font-bold text-xs text-orange-600">ME (Temporary)</span><span class="text-[9px] text-orange-300 font-bold uppercase tracking-tighter">Just Now</span></div>
+                            <p class="text-sm text-gray-700 mt-1">${input.value}</p>
+                        </div>
+                    `;
+                    container.prepend(div);
+                    input.value = "";
+                } else {
+                    alert("Daily quota exhausted.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
